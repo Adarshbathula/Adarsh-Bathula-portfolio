@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+}
+
+/* Section scroll targets: leave space below sticky header */
+[id="home"],
+[id="about"],
+[id="projects"],
+[id="skills"],
+[id="contact"] {
+  scroll-margin-top: 5rem;
+}
+
+.card {
+  @apply bg-card shadow-soft rounded-xl border border-cardMuted/40 transition-shadow duration-300;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-2 text-sm font-medium text-white shadow-soft transition hover:bg-accentDark hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentDark focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-full border border-cardMuted/80 bg-background px-6 py-2 text-sm font-medium text-foreground/90 shadow-soft transition hover:bg-card hover:text-foreground hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentDark focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+.section {
+  @apply mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8 lg:py-12;
+}
+
+.section-title {
+  @apply text-2xl font-semibold tracking-tight sm:text-3xl;
+}
+
+.section-subtitle {
+  @apply text-sm text-foreground/70;
+}
+
